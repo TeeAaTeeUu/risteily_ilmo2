@@ -1,0 +1,121 @@
+table, tr, td {
+    margin: 0px;
+}
+
+.body {
+}
+
+.navbar {
+}
+
+.valinta, .valinta2 { 
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+    width: 100%;
+}
+
+.info, .names2, .valinta {
+    border-style: solid;
+    border-width: 0.1em;
+}
+
+.names2 {
+    min-width: 13em;
+}
+
+.info {
+    vertical-align: top;
+}
+
+.desc {
+    text-align: left;
+}
+
+.luokka {
+    background-color: yellow;
+    border-bottom-style: solid;
+    border-bottom-width: 0.1em;
+}
+
+.cabin {
+    background-color: #CCFFFF;
+}
+
+.nick {
+    font-size: medium;
+    font-weight: bold;
+    border-bottom-style: solid;
+    border-bottom-width: 0.2em;
+}
+
+.cabininfo {
+    vertical-align: top;
+}
+
+.filler {
+    height: 2em;
+}
+
+.name {  
+    width: 10em;
+}
+
+.red {
+    color: purple;
+}
+
+.center {
+    text-align: center;
+}
+
+.input {
+    font-weight: 600;
+}
+
+.otsikko {
+    font-size: 150%;
+    font-weight: bold;
+    margin-top: 0em;
+}
+
+.otsikko2 {
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.otsikko3 {
+    font-size: 120%;
+    font-weight: bold;
+    padding-bottom: 1em;
+}
+
+#container-center {
+    padding: 0.5em;
+}
+
+#subfooter1 {
+    padding-top: 0.2em;
+}
+
+.linkki {
+    margin-bottom: 0.5em;
+    border-bottom-style: solid;
+    border-width: 1px;
+    position: relative;
+    right: 1em;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+p {
+    margin-top: 1em;
+}
+
+.plain {
+    font-size: 10pt;
+}

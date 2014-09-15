@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+    TODO define vocabulary identification
+    PUBLIC ID: -//vendor//vocabulary//EN
+    SYSTEM ID: http://server/path/settings.dtd
+
+-->
+
+<!--
+    An example how to use this DTD from your XML document:
+
+    <?xml version="1.0"?>
+
+    <!DOCTYPE settings SYSTEM "settings.dtd">
+
+    <settings>
+    ...
+    </settings>
+-->
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT settings (category|group|person)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT person (information|name)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT name (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT information (bit)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT bit (content|price|choice|group|musthave|errors|length|info|name)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT info (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT length (min|max)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT max (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT min (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT errors (error)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT error (message|name)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT message (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT musthave (#PCDATA|min|condition)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT condition (then|if|name)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT if (name)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT then (name)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT group (information|name|bit)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT choice (value)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT value (amount|size|default|price|name)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT price (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT default (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT size (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT amount (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT category (autofill|information|name)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT autofill (row)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT row (bit)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT content (#PCDATA)>

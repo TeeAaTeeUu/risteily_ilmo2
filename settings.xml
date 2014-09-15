@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+    <person>
+        <name>henkilö</name>
+        <subject>Henkilökohtaiset tietosi</subject>
+        <info>Ja vielä tämä on täytettävä, ja homma skulaa.</info>
+        <information>
+            <bit>
+                <name>nimi</name>
+                <info>julkinen, jos ei lempinimeä</info>
+                <length>
+                    <max>40</max>
+                    <min>5</min>
+                </length>
+                <errors>
+                    <error>
+                        <name>max</name>
+                        <message>Nimi voi olla vain 40 merkkiä pitkä</message>
+                    </error>
+                    <error>
+                        <name>min</name>
+                        <message>Nimen pitää olla vähintään 5 merkkiä pitkä</message>
+                    </error>
+                    <error>
+                        <name>musthave</name>
+                        <message>Nimi on pakollinen kenttä</message>
+                    </error>
+                    <error>
+                        <name>duplicates</name>
+                        <message>Antamasi nimi on jo rekisteröitynyt: jos olet varma ettet jo ilmoittautunut, käytä esimerkiksi toista nimeäsi erottuaksesi saman nimisestä kanssaopiskelijastasi</message>
+                    </error>
+                </errors>
+                <musthave>yes</musthave>
+                <duplicates>no</duplicates>
+            </bit>
+            <bit>
+                <name>lempinimi</name>
+                <info>valinnainen, korvaa kokonimen</info>
+                <length>
+                    <max>40</max>
+                    <min>2</min>
+                </length>
+                <errors>
+                    <error>
+                        <name>max</name>
+                        <message>Lempinimi voi olla vain 40 merkkiä pitkä</message>
+                    </error>
+                    <error>
+                        <name>min</name>
+                        <message>Lempinimen pitää olla vähintään 2 merkkiä pitkä</message>
+                    </error>
+                    <error>
+                        <name>duplicates</name>
+                        <message>Antamasi lempinimi on jo käytössä</message>
+                    </error>
+                </errors>
+                <duplicates>no</duplicates>
+            </bit>
+            <bit>
+                <name>sähköposti</name>
+                <info>saat tapahtumajärjestäjän viestit tähän osoitteeseen</info>
+                <length>
+                    <max>70</max>
+                    <min>13</min>
+                </length>
+                <musthave>yes</musthave>
+                <mustcontain>
+                    <any>
+                        <value>@helsinki.fi</value>
+                        <value>@mappi.helsinki.fi</value>
+                        <value>@cs.helsinki.fi</value>
+                    </any>
+                </mustcontain>
+                <duplicates>no</duplicates>
+                <errors>
+                    <error>
+                        <name>max</name>
+                        <message>Sähköposti voi olla vain 70 merkkiä pitkä</message>
+                    </error>
+                    <error>
+                        <name>min</name>
+                        <message>Sähköpostin pitää olla vähintään 13 merkkiä pitkä</message>
+                    </error>
+                    <error>
+                        <name>musthave</name>
+                        <message>Sähköposti on pakollinen kenttä</message>
+                    </error>
+                    <error>
+                        <name>mustcontain</name>
+                        <message>Vain @helsinki.fi , @cs.helsinki.fi ja @mappi.helsinki.fi osoitteet ovat mahdollisia</message>
+                    </error>
+                    <error>
+                        <name>duplicates</name>
+                        <message>Antamasi sähköposti on jo käytössä</message>
+                    </error>
+                </errors>
+            </bit>
+            <bit>
+                <name>syntymäaika</name>
+                <info>syntymäaikasi (viimeistään 28.11.1995, koska K18)</info>
+                <length>
+                    <max>15</max>
+                    <min>5</min>
+                </length>
+                <errors>
+                    <error>
+                        <name>max</name>
+                        <message>Syntymäaikasi voi olla vain 15 merkkiä pitkä</message>
+                    </error>
+                    <error>
+                        <name>min</name>
+                        <message>Syntymäaikasi pitää olla vähintään 5 merkkiä pitkä</message>
+                    </error>
+                    <error>
+                        <name>musthave</name>
+                        <message>Syntymäaika on pakollinen kenttä</message>
+                    </error>
+                    <error>
+                        <name>mustcontain</name>
+                        <message>Syntymäajan pitää olla muodossa 10.5.1989</message>
+                    </error>
+                </errors>
+                <mustcontain>
+                    <any>
+                        <value>.</value>
+                    </any>
+                </mustcontain>
+                <musthave>yes</musthave>
+            </bit>
+            <bit>
+                <name>kansallisuus</name>
+                <info>esimerkiksi Suomi</info>
+                <length>
+                    <max>30</max>
+                    <min>2</min>
+                </length>
+                <errors>
+                    <error>
+                        <name>max</name>
+                        <message>Kansallisuus voi olla vain 30 merkkiä pitkä</message>
+                    </error>
+                    <error>
+                        <name>min</name>
+                        <message>Kansallisuus pitää olla vähintään 2 merkkiä pitkä</message>
+                    </error>
+                    <error>
+                        <name>musthave</name>
+                        <message>Kansallisuus on pakollinen kenttä</message>
+                    </error>
+                </errors>
+                <musthave>yes</musthave>
+            </bit>
+            <bit>
+                <name>etukortti</name>
+                <info>silja line -etukortti</info>
+                <length>
+                    <max>15</max>
+                    <min>10</min>
+                </length>
+                <errors>
+                    <error>
+                        <name>max</name>
+                        <message>Etukortti voi olla vain 15 merkkiä pitkä</message>
+                    </error>
+                    <error>
+                        <name>min</name>
+                        <message>Etukortin pitää olla vähintään 10 merkkiä pitkä</message>
+                    </error>
+                    <error>
+                        <name>duplicates</name>
+                        <message>Antamasi etukortti on jo käytössä</message>
+                    </error>
+                </errors>
+                <duplicates>no</duplicates>
+            </bit>
+            <bit>
+                <name>bussi</name>
+                <conditions>
+                    <condition>
+                        <name>kuljetukseton</name>
+                        <if>
+                            <parent>liikennöinti</parent>
+                            <name>ei kuljetusta</name>
+                        </if>
+                        <if>
+                            <parent>liikennöinti</parent>
+                            <name>paluu</name>
+                        </if>
+                        <then>
+                            <parent>lähtöpaikka</parent>
+                            <name>ei bussia</name>
+                        </then>
+                    </condition>
+                    <condition>
+                        <name>lähdötön</name>
+                        <if>
+                            <parent>liikennöinti</parent>
+                            <name>menopaluu</name>
+                        </if>
+                        <if>
+                            <parent>liikennöinti</parent>
+                            <name>meno</name>
+                        </if>
+                        <then>
+                            <parent>lähtöpaikka</parent>
+                            <name>Viikki</name>
+                        </then>
+                        <then>
+                            <parent>lähtöpaikka</parent>
+                            <name>Kumpula</name>
+                        </then>
+                    </condition>
+                </conditions>
+                <group>
+                    <bit>
+                        <name>liikennöinti</name>
+                        <info>Miten haluat päätyä Turkuun?</info>
+                        <length>
+                            <max>15</max>
+                        </length>
+                        <choice>
+                            <value>
+                                <name>menopaluu</name>
+                                <price>18</price>
+                            </value>
+                            <value>
+                                <name>meno</name>
+                                <price>14</price>
+                            </value>
+                            <value>
+                                <name>paluu</name>
+                                <price>14</price>
+                            </value>
+                            <value>
+                                <name>ei kuljetusta</name>
+                                <price>0</price>
+                            </value>
+                        </choice>
+                        <musthave>yes</musthave>
+                        <errors>
+                            <error>
+                                <name>musthave</name>
+                                <message>Liikennöinnin valinta on pakollinen. Miten edes onnistuit ilman?</message>
+                            </error>
+                        </errors>
+                    </bit>
+                    <bit>
+                        <name>lähtöpaikka</name>
+                        <info>Mistä haluat lähteä Turkuun?</info>
+                        <length>
+                            <max>10</max>
+                        </length>
+                        <choice>
+                            <value>
+                                <name>Kumpula</name>
+                            </value>
+                            <value>
+                                <name>Viikki</name>
+                            </value>
+                            <value>
+                                <name>ei bussia</name>
+                            </value>
+                        </choice>
+                        <musthave>yes</musthave>
+                        <errors>
+                            <error>
+                                <name>musthave</name>
+                                <message>Lähtöpaikan valinta on pakollinen. Miten edes onnistuit ilman?</message>
+                            </error>
+                        </errors>
+                    </bit>
+                </group>
+                <errors>
+                    <error>
+                        <name>kuljetukseton</name>
+                        <message>Et voi valita lähtöpaikkaa, jos et ilmoittaudu lähtöön</message>
+                    </error>
+                    <error>
+                        <name>lähdötön</name>
+                        <message>Et voi jättää lähtöpaikkaa tyhjäksi, jos ilmoittaudut menoon</message>
+                    </error>
+                </errors>
+            </bit>
+            <bit>
+                <name>ruokailu</name>
+                <info>Yksi ruokailu on pakollinen</info>
+                <musthave>
+                    <min>1</min>
+                </musthave>
+                <group>
+                    <bit>
+                        <name>aamiainen</name>
+                        <length>
+                            <max>1</max>
+                        </length>
+                        <check>
+                            <price>10</price>
+                        </check>
+                        <errors>
+                            <error>
+                                <name>max</name>
+                                <message>Miten onnistuit ruokailuun syöttämään sinne kuulumatonta?</message>
+                            </error>
+                        </errors>
+                    </bit>
+                    <bit>
+                        <name>illallinen</name>
+                        <length>
+                            <max>1</max>
+                        </length>
+                        <check>
+                            <price>34</price>
+                        </check>
+                        <errors>
+                            <error>
+                                <name>max</name>
+                                <message>Miten onnistuit ruokailuun syöttämään sinne kuulumatonta?</message>
+                            </error>
+                        </errors>
+                    </bit>
+                    <bit>
+                        <name>lounas</name>
+                        <length>
+                            <max>1</max>
+                        </length>
+                        <check>
+                            <price>30</price>
+                        </check>
+                        <errors>
+                            <error>
+                                <name>max</name>
+                                <message>Miten onnistuit ruokailuun syöttämään sinne kuulumatonta?</message>
+                            </error>
+                        </errors>
+                    </bit>
+                </group>
+                <errors>
+                    ><error>
+                        <name>musthave</name>
+                        <message>Pitää valita vähintään yksi ruokailu</message>
+                    </error>
+                </errors>
+            </bit>
+            <bit>
+                <name>lisätietoa</name>
+                <info>Jotain kerrottavaa?</info>
+                <length>
+                    <max>512</max>
+                </length>
+                <errors>
+                    <error>
+                        <name>max</name>
+                        <message>Lisätieto voi olla vain 512 merkkiä pitkä</message>
+                    </error>
+                </errors>
+            </bit>
+        </information>
+    </person>
+    <group>
+        <name>hytti</name>
+        <subject>Hytti listaus</subject>
+        <info>Luo uusi, tai valitse vielä vapaa hytti alhaalta.</info>
+        <information>
+            <bit>
+                <name>nimi</name>
+                <info>hyttisi lempinimi</info>
+                <length>
+                    <max>40</max>
+                    <min>2</min>
+                </length>
+                <errors>
+                    <error>
+                        <name>max</name>
+                        <message>Nimi voi olla vain 40 merkkiä pitkä</message>
+                    </error>
+                    <error>
+                        <name>min</name>
+                        <message>Nimen pitää olla vähintään 2 merkkiä pitkä</message>
+                    </error>
+                    <error>
+                        <name>musthave</name>
+                        <message>Hytillä pitää olla nimi</message>
+                    </error>
+                    <error>
+                        <name>duplicates</name>
+                        <message>Hytin nimi on valitettavasti jo käytössä</message>
+                    </error>
+                </errors>
+                <musthave>yes</musthave>
+                <duplicates>no</duplicates>
+            </bit>
+            <bit>
+                <name>luokka</name>
+                <info>hyttisi luokitustaso</info>
+                <length>
+                    <max>5</max>
+                </length>
+                <choice>
+                    <value>
+                        <name>A4</name>
+                        <price>25</price>
+                        <size>4</size>
+                        <amount>9</amount>
+                    </value>
+                    <value>
+                        <name>A2</name>
+                        <price>41</price>
+                        <size>2</size>
+                        <amount>41</amount>
+                    </value>
+                    <value>
+                        <name>A3</name>
+                        <price>30</price>
+                        <size>3</size>
+                        <amount>17</amount>
+                    </value>
+                    <value>
+                        <name>B2</name>
+                        <price>30</price>
+                        <size>2</size>
+                        <amount>41</amount>
+                    </value>
+                    <value>
+                        <name>B3</name>
+                        <price>24</price>
+                        <size>3</size>
+                        <amount>9</amount>
+                    </value>
+                    <value>
+                        <name>B4</name>
+                        <price>20</price>
+                        <size>21</size>
+                        <amount>28</amount>
+                    </value>
+                    <value>
+                        <name>E3</name>
+                        <price>15</price>
+                        <size>3</size>
+                        <amount>10</amount>
+                    </value>
+                    <value>
+                        <name>E4</name>
+                        <price>12</price>
+                        <size>4</size>
+                        <amount>5</amount>
+                    </value>
+                </choice>
+                <musthave>yes</musthave>
+                <errors>
+                    <error>
+                        <name>amount</name>
+                        <message>Valitsemasi hytti-luokan kaikki hytit on valitettavasti jo varattu</message>
+                    </error>
+                    <error>
+                        <name>size</name>
+                        <message>Valitsemasi hytti on valitettavasti jo täynnä</message>
+                    </error>
+                    <error>
+                        <name>musthave</name>
+                        <message>Kaikki hytit lienevät jo valitettavasti olevan "avattuja". Tarkista vielä löytyykö vajaita hyttejä</message>
+                    </error>
+                </errors>
+            </bit>
+            <bit>
+                <name>lisätietoa</name>
+                <info>Jotain kerrottavaa?</info>
+                <length>
+                    <max>512</max>
+                </length>
+                <errors>
+                    <error>
+                        <name>max</name>
+                        <message>Lisätieto voi olla vain 512 merkkiä pitkä</message>
+                    </error>
+                </errors>
+            </bit>
+        </information>
+    </group>
+    <category>
+        <name>Pääaine</name>
+        <subject>Pääaineesi</subject>
+        <info>Valitse pääaineesi, jotta näet vain tuttaviesi hytit.</info>
+        <information>
+            <bit>
+                <name>nimi</name>
+                <length>
+                    <max>30</max>
+                    <min>5</min>
+                </length>
+                <errors>
+                    <error>
+                        <name>max</name>
+                        <message>Nimi voi olla vain 30 merkkiä pitkä</message>
+                    </error>
+                    <error>
+                        <name>min</name>
+                        <message>Nimen pitää olla vähintään 5 merkkiä pitkä</message>
+                    </error>
+                    <error>
+                        <name>musthave</name>
+                        <message>Ryhmällä pitää olla nimi</message>
+                    </error>
+                    <error>
+                        <name>duplicates</name>
+                        <message>Antamasi pääaine on jo käytössä</message>
+                    </error>
+                </errors>
+                <musthave>yes</musthave>
+                <duplicates>no</duplicates>
+                <id>yes</id>
+            </bit>
+            <bit>
+                <name>lisätietoa</name>
+                <info>Jotain kerrottavaa?</info>
+                <length>
+                    <max>512</max>
+                </length>
+                <errors>
+                    <error>
+                        <name>max</name>
+                        <message>Lisätieto voi olla vain 512 merkkiä pitkä</message>
+                    </error>
+                </errors>
+            </bit>
+        </information>
+        <autofill>
+            <row>
+                <bit>
+                    <name>nimi</name>
+                    <content>Fyysikot</content>
+                </bit>
+                <bit>
+                    <name>lisätietoa</name>
+                    <content>Kaikki tämän alan opiskelijat, ilmoittautukaa tänne!</content>
+                </bit>
+            </row>
+            <row>
+                <bit>
+                    <name>nimi</name>
+                    <content>Kemistit</content>
+                </bit>
+                <bit>
+                    <name>lisätietoa</name>
+                    <content>Kaikki tämän alan opiskelijat, ilmoittautukaa tänne!</content>
+                </bit>
+            </row>
+            <row>
+                <bit>
+                    <name>nimi</name>
+                    <content>Biokemistit</content>
+                </bit>
+                <bit>
+                    <name>lisätietoa</name>
+                    <content>Kaikki tämän alan opiskelijat, ilmoittautukaa tänne!</content>
+                </bit>
+            </row>
+            <row>
+                <bit>
+                    <name>nimi</name>
+                    <content>Matemaatikot</content>
+                </bit>
+                <bit>
+                    <name>lisätietoa</name>
+                    <content>Kaikki tämän alan opiskelijat, ilmoittautukaa tänne!</content>
+                </bit>
+            </row>
+            <row>
+                <bit>
+                    <name>nimi</name>
+                    <content>Biologit</content>
+                </bit>
+                <bit>
+                    <name>lisätietoa</name>
+                    <content>Kaikki tämän alan opiskelijat, ilmoittautukaa tänne!</content>
+                </bit>
+            </row>
+            <row>
+                <bit>
+                    <name>nimi</name>
+                    <content>Eläinlääkärit</content>
+                </bit>
+                <bit>
+                    <name>lisätietoa</name>
+                    <content>Kaikki tämän alan opiskelijat, ilmoittautukaa tänne!</content>
+                </bit>
+            </row>
+            <row>
+                <bit>
+                    <name>nimi</name>
+                    <content>Maantieteilijät</content>
+                </bit>
+                <bit>
+                    <name>lisätietoa</name>
+                    <content>Kaikki tämän alan opiskelijat, ilmoittautukaa tänne!</content>
+                </bit>
+            </row>
+            <row>
+                <bit>
+                    <name>nimi</name>
+                    <content>Geologit</content>
+                </bit>
+                <bit>
+                    <name>lisätietoa</name>
+                    <content>Kaikki tämän alan opiskelijat, ilmoittautukaa tänne!</content>
+                </bit>
+            </row>
+            <row>
+                <bit>
+                    <name>nimi</name>
+                    <content>Käpistelijät</content>
+                </bit>
+                <bit>
+                    <name>lisätietoa</name>
+                    <content>Kaikki tämän alan opiskelijat, ilmoittautukaa tänne!</content>
+                </bit>
+            </row>
+        </autofill>
+    </category>
+    <others>
+        <currency>€</currency>
+        <open>
+            <starttime>
+                <unixtime>1380877200</unixtime>
+            </starttime>
+            <stoptime>
+                <unixtime>1383253199</unixtime>
+            </stoptime>
+            <errors>
+                <error>
+                    <name>late</name>
+                    <message>Ilmoittautuminen on valitettavasti päättynyt.</message>
+                </error>
+                <error>
+                    <name>early</name>
+                    <message>Ilmoittautuminen ei ole vielä alkanut.</message>
+                </error>
+            </errors>
+        </open>
+        <pay>
+            <info>Maksa tilille X, vimeistään Y nimellä Z. Muista käyttää viitenumeroa.</info>
+        </pay>
+        <email>
+            <info>Hei, ja kiitos ilmoittautumisestasi Jouluristeilylle!</info>
+        </email>
+        <debug>yes</debug>
+    </others>
+</settings>

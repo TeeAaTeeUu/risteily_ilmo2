@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+    <person>
+        <name>henkilö</name>
+        <subject>Henkilökohtaiset tietosi</subject>
+        <info>Pelkkään bussiin ilmoittautuminen.</info>
+        <information>
+            <bit>
+                <name>nimi</name>
+                <info>julkinen, jos ei lempinimeä</info>
+                <length>
+                    <max>40</max>
+                    <min>5</min>
+                </length>
+                <errors>
+                    <error>
+                        <name>max</name>
+                        <message>Nimi voi olla vain 40 merkkiä pitkä</message>
+                    </error>
+                    <error>
+                        <name>min</name>
+                        <message>Nimen pitää olla vähintään 5 merkkiä pitkä</message>
+                    </error>
+                    <error>
+                        <name>musthave</name>
+                        <message>Nimi on pakollinen kenttä</message>
+                    </error>
+                    <error>
+                        <name>duplicates</name>
+                        <message>Antamasi nimi on jo rekisteröitynyt: jos olet varma ettet jo ilmoittautunut, käytä esimerkiksi toista nimeäsi erottuaksesi saman nimisestä kanssaopiskelijastasi</message>
+                    </error>
+                </errors>
+                <musthave>yes</musthave>
+                <duplicates>no</duplicates>
+            </bit>
+            <bit>
+                <name>lempinimi</name>
+                <info>valinnainen, korvaa kokonimen</info>
+                <length>
+                    <max>40</max>
+                    <min>2</min>
+                </length>
+                <errors>
+                    <error>
+                        <name>max</name>
+                        <message>Lempinimi voi olla vain 40 merkkiä pitkä</message>
+                    </error>
+                    <error>
+                        <name>min</name>
+                        <message>Lempinimen pitää olla vähintään 2 merkkiä pitkä</message>
+                    </error>
+                    <error>
+                        <name>duplicates</name>
+                        <message>Antamasi lempinimi on jo käytössä</message>
+                    </error>
+                </errors>
+                <duplicates>no</duplicates>
+            </bit>
+            <bit>
+                <name>sähköposti</name>
+                <info>saat tapahtumajärjestäjän viestit tähän osoitteeseen</info>
+                <length>
+                    <max>70</max>
+                    <min>13</min>
+                </length>
+                <musthave>yes</musthave>
+                <mustcontain>
+                    <any>
+                        <value>@</value>
+                    </any>
+                </mustcontain>
+                <duplicates>no</duplicates>
+                <errors>
+                    <error>
+                        <name>max</name>
+                        <message>Sähköposti voi olla vain 70 merkkiä pitkä</message>
+                    </error>
+                    <error>
+                        <name>min</name>
+                        <message>Sähköpostin pitää olla vähintään 13 merkkiä pitkä</message>
+                    </error>
+                    <error>
+                        <name>musthave</name>
+                        <message>Sähköposti on pakollinen kenttä</message>
+                    </error>
+                    <error>
+                        <name>mustcontain</name>
+                        <message>Laitoitko varmasti sähköpostiosoitteesi?</message>
+                    </error>
+                    <error>
+                        <name>duplicates</name>
+                        <message>Antamasi sähköposti on jo käytössä</message>
+                    </error>
+                </errors>
+            </bit>
+            <bit>
+                <name>bussi</name>
+                <conditions>
+                    <condition>
+                        <name>kuljetukseton</name>
+                        <if>
+                            <parent>liikennöinti</parent>
+                            <name>paluu</name>
+                        </if>
+                        <then>
+                            <parent>lähtöpaikka</parent>
+                            <name>ei bussia</name>
+                        </then>
+                    </condition>
+                    <condition>
+                        <name>lähdötön</name>
+                        <if>
+                            <parent>liikennöinti</parent>
+                            <name>menopaluu</name>
+                        </if>
+                        <if>
+                            <parent>liikennöinti</parent>
+                            <name>meno</name>
+                        </if>
+                        <then>
+                            <parent>lähtöpaikka</parent>
+                            <name>Viikki</name>
+                        </then>
+                        <then>
+                            <parent>lähtöpaikka</parent>
+                            <name>Kumpula</name>
+                        </then>
+                    </condition>
+                </conditions>
+                <group>
+                    <bit>
+                        <name>liikennöinti</name>
+                        <info>Miten haluat päätyä Turkuun?</info>
+                        <length>
+                            <max>15</max>
+                        </length>
+                        <choice>
+                            <value>
+                                <name>menopaluu</name>
+                                <price>18</price>
+                            </value>
+                            <value>
+                                <name>meno</name>
+                                <price>14</price>
+                            </value>
+                            <value>
+                                <name>paluu</name>
+                                <price>14</price>
+                            </value>
+                        </choice>
+                        <musthave>yes</musthave>
+                        <errors>
+                            <error>
+                                <name>musthave</name>
+                                <message>Liikennöinnin valinta on pakollinen. Miten edes onnistuit ilman?</message>
+                            </error>
+                        </errors>
+                    </bit>
+                    <bit>
+                        <name>lähtöpaikka</name>
+                        <info>Mistä haluat lähteä Turkuun?</info>
+                        <length>
+                            <max>10</max>
+                        </length>
+                        <choice>
+                            <value>
+                                <name>Kumpula</name>
+                            </value>
+                            <value>
+                                <name>Viikki</name>
+                            </value>
+                            <value>
+                                <name>ei bussia</name>
+                            </value>
+                        </choice>
+                        <musthave>yes</musthave>
+                        <errors>
+                            <error>
+                                <name>musthave</name>
+                                <message>Lähtöpaikan valinta on pakollinen. Miten edes onnistuit ilman?</message>
+                            </error>
+                        </errors>
+                    </bit>
+                </group>
+                <errors>
+                    <error>
+                        <name>kuljetukseton</name>
+                        <message>Et voi valita lähtöpaikkaa, jos et ilmoittaudu lähtöön</message>
+                    </error>
+                    <error>
+                        <name>lähdötön</name>
+                        <message>Et voi jättää lähtöpaikkaa tyhjäksi, jos ilmoittaudut menoon</message>
+                    </error>
+                </errors>
+            </bit>
+            <bit>
+                <name>lisätietoa</name>
+                <info>Jotain kerrottavaa?</info>
+                <length>
+                    <max>512</max>
+                </length>
+                <errors>
+                    <error>
+                        <name>max</name>
+                        <message>Lisätieto voi olla vain 512 merkkiä pitkä</message>
+                    </error>
+                </errors>
+            </bit>
+        </information>
+    </person>
+    <others>
+        <currency>€</currency>
+        <open>
+            <starttime>
+                <unixtime>1380877200</unixtime>
+            </starttime>
+            <stoptime>
+                <unixtime>1383253199</unixtime>
+            </stoptime>
+            <errors>
+                <error>
+                    <name>late</name>
+                    <message>Ilmoittautuminen on valitettavasti päättynyt.</message>
+                </error>
+                <error>
+                    <name>early</name>
+                    <message>Ilmoittautuminen ei ole vielä alkanut.</message>
+                </error>
+            </errors>
+        </open>
+        <pay>
+            <info>Maksa tilille X, saaja Y, vimeistään Z. Muista käyttää viitenumeroa. Huomaathan että jos maksua ei suoriteta eräpäivään mennessä, ilmoittautuminen peruuntuu!</info>
+        </pay>
+        <email>
+            <info>Hei, ja kiitos ilmoittautumisestasi bussikuljetukseen!</info>
+        </email>
+    </others>
+</settings>
